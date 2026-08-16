@@ -11,10 +11,10 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-
-    // Forces TanStack Start to build a static frontend bundle for Tauri
-    spa: {
-      enabled: true,
+    
+    // Disable automatic prerendering for Vercel serverless deployment compatibility
+    prerender: {
+      enabled: false,
     },
   },
 });
